@@ -14,7 +14,7 @@ const getAll = async (req, res) => {
 
 const getById = async (req, res) => {
     console.log('Get contact by id: ' + req.params.id);
-    const contactId = req.params.id;
+    const contactId = new ObjectId(req.params.id);
     const result =
         await mongodb.getDb().collection('contacts').find({ _id: contactId });
 
